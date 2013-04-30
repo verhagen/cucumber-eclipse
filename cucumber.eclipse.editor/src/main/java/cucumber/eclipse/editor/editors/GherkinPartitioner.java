@@ -31,7 +31,6 @@ public class GherkinPartitioner extends FastPartitioner {
 	private String determineGherkinLanguageMode(IDocument document) {
 		String code = DEFAULT_EN; //default
 		try {
-
 			IRegion lineInformation = document.getLineInformation(0);
 			int length = lineInformation.getLength();
 			int offset = lineInformation.getOffset();
@@ -48,9 +47,7 @@ public class GherkinPartitioner extends FastPartitioner {
 	
 	public IRegion documentChanged2(DocumentEvent e) {
 		IRegion documentChanged2 = super.documentChanged2(e);
-		
 		return documentChanged2;
-		
 	}
 
 
