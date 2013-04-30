@@ -15,9 +15,11 @@ public class ColorManager {
 
 	public void dispose() {
 		Iterator<Color> e = fColorTable.values().iterator();
-		while (e.hasNext())
+		while (e.hasNext()) {
 			 e.next().dispose();
+		}
 	}
+
 	public Color getColor(RGB rgb) {
 		Color color = fColorTable.get(rgb);
 		if (color == null) {
@@ -28,11 +30,7 @@ public class ColorManager {
 	}
 	
 	public Color getColor(GherkinColors color) {
-		return PlatformUI.
-		getWorkbench().
-		getThemeManager().
-		getCurrentTheme().
-		getColorRegistry().
-		get(color.COLOR_PREFERENCE_ID);
+		return PlatformUI.getWorkbench().getThemeManager().getCurrentTheme().
+				getColorRegistry().get(color.COLOR_PREFERENCE_ID);
 	}
 }
